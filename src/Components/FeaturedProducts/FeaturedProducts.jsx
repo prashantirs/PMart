@@ -33,7 +33,7 @@ const FeaturedProducts = () => {
             <Carousel responsive={responsive} showDots={true} infinite={true} swipeable={true}>
               {products.map((product) => { 
                 return(
-                <ProductCard key={product.id} name={product.name} image={product.image} />
+                <ProductCard key={product.id} name={product.name} image={product.image} productObj={product}/>
               )})}
             </Carousel>
       </div>

@@ -13,6 +13,19 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+import Badge from '@mui/material/Badge';
+import { styled } from '@mui/material/styles';
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: '0 4px',
+  },
+}));
 
 //get local starage
 const getLocalData = () => {
@@ -28,9 +41,9 @@ const getLocalData = () => {
   const navigate = useNavigate();
   const [name, setName] = useState(getLocalData())
   const [displayName, setDisplayName] = useState(name)
-  useEffect(() => {
-  }, [name])
-  
+  const cart  = useSelector((state => state.cart));
+  const CartItems = cart.length;
+
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -74,7 +87,9 @@ const getLocalData = () => {
         </div>
         <div className="header-right-icons">
           <div className="cart" onClick={()=>{navigate("/cart")}}>
+          <StyledBadge fontSize="large" badgeContent={CartItems} color="secondary">
             <ShoppingCartOutlinedIcon fontSize="large" />
+            </StyledBadge>
           </div>
           <div className="login-user" >
             
