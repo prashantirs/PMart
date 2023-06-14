@@ -15,7 +15,10 @@
 @media (max-width:1028px) {
     .brands{
         justify-content: center;
-        gap: 1rem;
+        padding: 0px;
+        padding-top: 3rem;
+        margin-left: 2px;
+        gap: 3rem;
 
     }
 }

@@ -2,6 +2,9 @@ import OneSlider from './OneSlider'
 import './TopCarousel.css'
 import images from './images'
 import Slider from "react-slick";
+
+const setArrow = window.innerWidth < 600 ? false : true;
+
 const TopCarousel = () => {
     const settings = {
         dots: true,
@@ -11,6 +14,7 @@ const TopCarousel = () => {
         slidesToScroll: 1,
         autoplay: true,
         speed: 1500,
+        arrows: setArrow,
       };
     return (
      <>
