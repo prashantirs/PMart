@@ -25,7 +25,6 @@ a{
   padding: 1rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  cursor: pointer;
 }
 .ProductCard:hover{
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -37,6 +36,7 @@ a{
   margin-bottom: -1rem;
   margin-right: 0;
 }
+
 
 
 

@@ -30,7 +30,7 @@ const DifferentCategory = ({items,heading,desktopItem}) => {
             <Carousel responsive={responsive} showDots={true} infinite={true} swipeable={true}>
               {items.map((product) => { 
                 return(
-                <ProductCard key={product.id} name={product.name} image={product.image} />
+                <ProductCard key={product.id} name={product.name} image={product.image} productObj={product}/>
               )})}
             </Carousel>
       </div>

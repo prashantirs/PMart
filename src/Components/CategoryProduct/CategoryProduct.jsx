@@ -1,6 +1,4 @@
-import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import ProductCard from '../FeaturedProducts/ProductCard';
 import products from '../../API/products'
 import DifferentCategory from './DifferentCategory/DifferentCategory';
 

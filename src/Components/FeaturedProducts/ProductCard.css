@@ -41,4 +41,8 @@
     margin-top: 0.2rem;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+}
+.product-cart-icon{
+    cursor: pointer;
 }

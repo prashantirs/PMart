@@ -35,7 +35,7 @@ const ProductCard = ({image,name,productObj}) => {
                 <h3 className='product-name'>{`${EditedName}...`}</h3>
                 <p className='product-price'>Rs. 1000</p>
             </div>
-            <div className="cart" onClick={addToCartHandler}>
+            <div className="product-cart-icon" onClick={addToCartHandler}>
                 <button className='add-to-cart'>
                   <ShoppingCartIcon fontSize='medium' style={{color:"white"}}/>
                 </button>
