@@ -68,3 +68,13 @@
     color: #3B4959;
     cursor: pointer;
 }
+
+@media (max-width:1028px) {
+ .footer-section-top-right{
+    display: none;
+ }
+ .footer-section-top-left{
+    position: relative;
+    bottom: 2.5rem;
+ }
+}

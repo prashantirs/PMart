@@ -52,3 +52,43 @@
     transform: scale(1.1);
     transition: all 0.5s ease-in-out;
 }
+.grabButton{
+    padding-top: 0.4rem;
+    font-size: 1.1rem;
+}
+
+
+@media (max-width:1028px) {
+    .Offer{
+        flex-direction: column;
+        margin: auto;
+        margin-bottom: 13rem;
+        margin-left: 1rem;
+    }
+    .offer-image{
+        height: 15.1rem;
+        width: 100%;
+        object-fit:cover;
+        border-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }    
+    .offer-content{
+        border-radius: 0;
+        width: 57.5vw;
+        gap: 1rem;
+        position: relative;
+        bottom: 0.3rem;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .offer-content-one{
+        color: #4c4e50;
+    }
+    .offer-content-two{
+        font-size: 1rem;
+    }
+    .offer-content-three{
+        width: 10rem;
+    }
+}
