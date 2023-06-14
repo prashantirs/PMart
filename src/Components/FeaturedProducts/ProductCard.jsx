@@ -16,8 +16,12 @@ const ProductCard = ({image,name,productObj}) => {
   const [isLiked, setIsLiked] = useState(false);
 
   const handleLike = () => {
-    setIsLiked(!isLiked);
-    toast.success("Liked");
+    setIsLiked(!isLiked)
+    if(!isLiked){
+      toast.success("Added To Favorite");
+    }else{
+      toast.error("Removed From Favorite");
+    }
   };
   
   const addToCartHandler = () => {

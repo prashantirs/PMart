@@ -7,6 +7,10 @@
     padding: 1rem 4rem;
     padding-right: 1rem;
     padding-bottom: 0.5rem;
+    position: fixed;
+    width: 100%;
+    z-index: 10001;
+    top: 0;
 }
 
 .company-name{
@@ -32,7 +36,7 @@
 .header-right{
     display: flex;
     align-items: center;
-    margin-right: 2rem;
+    margin-right: 6rem;
 }
 .header-right-search{
     display: flex;
@@ -109,6 +113,9 @@ input[type="text"]::placeholder{
     .login-user{
         padding-left: 2rem;
         position: relative;
-        left: 2rem;
+        left: 3rem;
+    }
+    .header-right-icons{
+        margin-left: 1rem;
     }
 }
