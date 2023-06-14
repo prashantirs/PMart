@@ -27,6 +27,7 @@ const getLocalData = () => {
   const Header = () => {
   const navigate = useNavigate();
   const [name, setName] = useState(getLocalData())
+  const [displayName, setDisplayName] = useState(name)
   useEffect(() => {
   }, [name])
   
@@ -38,6 +39,17 @@ const getLocalData = () => {
 
   const handleClose = () => {
     setOpen(false);
+  };
+  const handleCloseLogin = () => {
+    setOpen(false);
+    setDisplayName(name)
+  };
+  
+  const handleCloseLogout = () => {
+    setOpen(false);
+    setName("Login");
+    setDisplayName("Login")
+    localStorage.setItem('user-name', JSON.stringify("Login"));
   };
 
   const nameHandler = (e) => {
@@ -66,9 +78,9 @@ const getLocalData = () => {
           </div>
           <div className="login-user" >
             
-            <div className="svg-icon">{name === "Login" || "" ? <SentimentDissatisfiedIcon className="login-icon" fontSize="large" /> : <InsertEmoticonIcon fontSize="large" />}</div>
+            <div className="svg-icon">{displayName === "Login" || "" ? <SentimentDissatisfiedIcon className="login-icon" fontSize="large" /> : <InsertEmoticonIcon fontSize="large" />}</div>
             <Button className="dialog-button"onClick={handleClickOpen}>
-              <div className="login-user-name">{name}</div>
+              <div className="login-user-name">{displayName}</div>
             </Button>
             </div>
             <Dialog open={open} onClose={handleClose}>
@@ -86,8 +98,8 @@ const getLocalData = () => {
                 />
               </DialogContent>
               <DialogActions>
-                <Button onClick={handleClose}>Cancel</Button>
-                <Button onClick={handleClose}>Login</Button>
+                <Button onClick={handleCloseLogout}>Logout</Button>
+                <Button onClick={handleCloseLogin}>Login</Button>
               </DialogActions>
             </Dialog>
         </div>
