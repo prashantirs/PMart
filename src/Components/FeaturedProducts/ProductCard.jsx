@@ -4,6 +4,7 @@ import { AiFillHeart,AiOutlineHeart } from "react-icons/ai";
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../Redux/Actions/product';
+import { toast } from 'react-hot-toast';
 
 const ProductCard = ({image,name,productObj}) => {
   const dispatch = useDispatch();
@@ -16,9 +17,11 @@ const ProductCard = ({image,name,productObj}) => {
 
   const handleLike = () => {
     setIsLiked(!isLiked);
+    toast.success("Liked");
   };
   
   const addToCartHandler = () => {
+    toast.success("Added to Cart");
     dispatch(addToCart(productObj));
   }
 

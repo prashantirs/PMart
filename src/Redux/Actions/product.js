@@ -1,5 +1,4 @@
 import { ActionTypes } from "../Constants/action-type"
-import products from '../../API/products'
 
 export const addToCart = (data) => {
     return {

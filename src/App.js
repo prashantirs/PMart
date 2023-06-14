@@ -1,5 +1,5 @@
 import Header from "./Components/Header/Header";
-
+import { Toaster } from "react-hot-toast";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BestSellers from "./Components/CurratedPicks/BestSellers/BestSellers";
 import ShopMen from "./Components/CurratedPicks/ShopMen/ShopMen";
@@ -24,6 +24,7 @@ function App() {
           <Route path="/cart" element={<Cart/>} />
         </Routes>
         <Footer/>
+        <Toaster />
     </Router>
     </>
   );
