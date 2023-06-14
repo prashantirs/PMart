@@ -24,7 +24,7 @@ function App() {
           <Route path="/cart" element={<Cart/>} />
         </Routes>
         <Footer/>
-        <Toaster />
+        <Toaster position="bottom-left" toastOptions={{style:{zIndex:100000}}}/>
     </Router>
     </>
   );
