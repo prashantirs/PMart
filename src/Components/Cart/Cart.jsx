@@ -18,6 +18,9 @@ const Cart = () => {
   useEffect(() => {
     calculatePrice();
   }, [cart]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   
   return (
     <div className="Cart-Section">
