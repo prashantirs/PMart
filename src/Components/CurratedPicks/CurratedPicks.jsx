@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const CurratedPicks = () => {
   return (
     <div className="CurratedPicks-section">
-      <h1>CurratedPicks</h1>
+      <h1>Curated Picks</h1>
       <div className="currated-cards">
         {curratedItem.map((item) => {
           return (

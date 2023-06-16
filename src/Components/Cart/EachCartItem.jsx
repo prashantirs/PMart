@@ -5,6 +5,12 @@ import { decreaseQuantity, increaseQuantity } from '../../Redux/Actions/product'
 import { useEffect, useState } from 'react';
 
 const EachCartItem = ({id,image,name,rating,quantity,price,productObj,oncalculatePrice}) => {
+  let ChangedName = name
+  if(window.innerWidth < 400){
+    if(name.length > 20){
+      ChangedName = name.slice(0,20) + "..."
+    }
+  }
   const cart = useSelector((state) => state.cart);
   const realQuantity = cart.find((item) => item.id === id).quantity;
 
@@ -27,12 +33,13 @@ const EachCartItem = ({id,image,name,rating,quantity,price,productObj,oncalculat
   }, [realQuantity])
   return (
     <div className='cart-box'>
+   
         <div className="cart-box-left">
             <div className="cart-image">
                  <img src={image[0]} alt="mobile" className='cart-box-left-image'/>
             </div>
             <div className="cart-product-desc">
-                <div className="cart-product-name">{name}</div>
+                <div className="cart-product-name">{ChangedName}</div>
                 <div className="cart-product-rating">Rating : {rating}</div>
             </div>
         </div>
@@ -43,8 +50,11 @@ const EachCartItem = ({id,image,name,rating,quantity,price,productObj,oncalculat
               <div className="sub-quantity" onClick={decreaseQuantityHandler}>-</div>
             </div>
             <div className="price">{price}</div>
+            <div className='crossIcon-box'>
+              <ClearIcon className="crossIcon" style={{cursor:"pointer"}} onClick={deleteHandler}/>
+            </div>
         </div>
-      <ClearIcon style={{position:"relative",bottom:"1.5rem",left:"1.5rem",cursor:"pointer"}} onClick={deleteHandler}/>
+      
     </div>
   )
 }

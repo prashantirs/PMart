@@ -20,6 +20,7 @@
     border: 1px solid #e3e5e8;
     height: fit-content;
     border-radius: 5px;
+    padding-bottom: 1rem;
   }
   
   .cart-right {
@@ -80,7 +81,7 @@
   }
   
   .cart-right {
-    width: 80%;
+    width: 84%;
     position: relative;
   }
   .cart-left-top{

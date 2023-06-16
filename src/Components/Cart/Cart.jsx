@@ -7,11 +7,24 @@ const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [price, setPrice] = useState(0);
 
+  function extractPrice(inputString) {
+    const regex = /₹(\d+(,\d{3})*(\.\d{1,2})?)/;
+    const match = inputString.match(regex);
+  
+    if (match && match[1]) {
+      const priceString = match[1].replace(/,/g, ''); // Remove commas
+      const priceInt = parseInt(priceString, 10); // Convert to integer
+      return priceInt;
+    }
+  
+    return null;
+  }
+
   const calculatePrice = () => {
     let total = 0;
     cart.forEach((item) => {
-      const numbers = item.price.split(/\D+/).map(parseFloat);
-      total += numbers[1] * item.quantity;
+      const extractedPrice = extractPrice(item.price);
+      total += extractedPrice * item.quantity;
     });
     setPrice(total);
   };
