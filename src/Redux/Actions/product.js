@@ -19,3 +19,14 @@ export const decreaseQuantity = (id) => {
         payload: id,
     }
 }
+export const addSelectedProduct = (data) => {
+    return {
+        type: ActionTypes.SELECTED_PRODUCT,
+        payload: data,
+    }
+}
+export const removeSelectedProduct = () => {
+    return {
+        type: ActionTypes.REMOVE_SELECTED_PRODUCT,
+    }
+}

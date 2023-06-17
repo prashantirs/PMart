@@ -21,6 +21,7 @@ const data = [
       "I have upgraded from Android to iOS for the first time with the IPhone 12 Pro. And the experience is very much satisfactory. The new A14 bionic processor is very fast. The boxy design is what I liked the most. The camera and display are top notch. Night mode photography is excellent. Worth upgrading from Android to iOS .",
       "Awesome! Just made an upgrade from X, worth every single penny spent on it, the camera is just too superb, be it the selfie cam or the main rear cam, the goodness it takes the picture is just beyond words, no smart phone can beat it atm! However, the battery life tends to be on the shorter side, that’s the only con that I can’t think up of now.",
     ],
+    
   },
 
   {

@@ -21,6 +21,7 @@ const data = [
       "I have upgraded from Android to iOS for the first time with the IPhone 12 Pro. And the experience is very much satisfactory. The new A14 bionic processor is very fast. The boxy design is what I liked the most. The camera and display are top notch. Night mode photography is excellent. Worth upgrading from Android to iOS .",
       "Awesome! Just made an upgrade from X, worth every single penny spent on it, the camera is just too superb, be it the selfie cam or the main rear cam, the goodness it takes the picture is just beyond words, no smart phone can beat it atm! However, the battery life tends to be on the shorter side, that’s the only con that I can’t think up of now.",
     ],
+    quantity: 1,
   },
 
   {
@@ -59,6 +60,7 @@ const data = [
       
       and specily thenks to flipcart..`,
     ],
+    quantity: 1,
   },
 
   {
@@ -102,6 +104,7 @@ const data = [
       Though it comes with a lot of bloatware but you can just uninstall most of them (excluding system apps)
       Finally the Verdict is that it's a good budget smartphone`,
     ],
+    quantity: 1,
   },
 
   {
@@ -136,6 +139,7 @@ const data = [
       "Best phone in budget. Working very smoothly. Touch quality is awesome. Display is also very nice. Battery of the phone is very good only camera part is not so good as expected some updates are needed in camera rest all the things are the best.",
       `Product is worth of money. Performance of this is very smooth. I love it usually m using Motorola smart phone but this one is best.`,
     ],
+    quantity: 1,
   },
 
   {
@@ -157,6 +161,7 @@ const data = [
       "I say about this mobile only wow wow and wow it's performing god level performance and this mobile look so cool very slim and light weight mobile display quality is 10/10 battery life is so better it's battery perform like 6000 mah of ips display mobile amoled is very good working Iblove it❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️😍😍😍😍",
       "Good phone...But not a good camera..Usually redmi phones not good in camera quality but it's ok...120 heartz refresh rate with AMO LED display give perfect display and best batter backup",
     ],
+    quantity: 1,
   }, {
     catogeries: "phone",
     name: "OPPO Reno6 Pro 5G (Aurora, 256 GB)",
@@ -185,6 +190,7 @@ const data = [
     Ultrafast charging`,
       "This is a Great phone, nice camera, Good Battery backup, Fast Charging and beautiful design. I Love 😘😘 it",
     ],
+    quantity: 1,
   },
   {
     catogeries: "phone",
@@ -205,6 +211,7 @@ const data = [
       "Not a worth buy considering the competetions. A 90hz refresh rate and 732g processor would have given a better competetion and decent buy!!",
       "Super Mobile. I like so much. RAM is good. Camera is amazing. Battery charging speed excellent. Within 45min it will be full from 10% of battery. Only thing, the battery came down little fastly. It's not coming one day with Internet. With internet it's coming around 12 to 15 hrs. Totally very super mobile.",
     ],
+    quantity: 1,
   },
 
   {
@@ -226,6 +233,7 @@ const data = [
       "Loved the design, quality, performance, feels rich while handling, and really appreciate that samsung had improved a lot for the user experience. E.g. performance, battery management has been improved a lot. Feels premium device. Easy and Smooth interface. I loved 😍it and would recommend to my friends and family!",
       "Finally Samsung brings an updated version of Galaxy A series which was one of the most selling mobile last year. As of now performance wise it's very much impressive. A52 feels good in hand and looks premium. No lag,display & camera quality is very good on this price category. Forget about Pixel and One plus here is the 8 GB varient which is definitely a value for money product 💯🤘",
     ],
+    quantity: 1,
   },
 
   {
@@ -246,6 +254,7 @@ const data = [
       "Best Samsung phone in this price range.Good battery back up.Decent Display.Fast fingerprint sensor.Rear camera quality is good.front camera is not up to the mark.90 Hz refresh rate is good.Good user interface.updated to one ui 3.1.there are some pre installed apps which can only be disabled.sound quality is low comparing with other smartphones in same price segment.using in low screen bightness noticed screen flickering.",
       "First I would like to thank you Flipkart for fastest delivery and yah the delivery guy is so cooperative and helpful. Samsung phones are always best in performance and this one is also affordable and awesome phone",
     ],
+    quantity: 1,
   },
 
 ];

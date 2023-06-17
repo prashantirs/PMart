@@ -8,6 +8,7 @@ import ShopCasual from "./Components/CurratedPicks/ShopCasual/ShopCasual";
 import Home from "./Components/Home/Home";
 import Cart from "./Components/Cart/Cart";
 import Footer from "./Components/Footer/Footer";
+import SingleProductDetails from "./Components/SingleProductDetails/SingleProductDetails";
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/shopmen" element={<ShopMen/>} />
           <Route path="/shopwomen" element={<ShopWomen/>} />
           <Route path="/shopcasual" element={<ShopCasual/>} />
+          <Route path="/product/:productID" element={<SingleProductDetails/>} />
           <Route path="/cart" element={<Cart/>} />
         </Routes>
         <Footer/>
