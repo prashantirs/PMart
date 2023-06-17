@@ -70,7 +70,60 @@ const SingleProductDetails = () => {
     window.scrollTo(0, 0);
     checkQuantity();
   }, []);
-
+  const isCloths = productInfo?.catogeries === "fashion" || "Sports";
+  const isPhone = productInfo?.catogeries === "phone";
+  const sizeSection = <div className="single-product-size">
+                        <div className="size-top">Available Size</div>
+                        <div className="size-bottom">
+                          <div className={`size ${selected.S && "size-selected"}`} onClick={()=>{setSelected((prev)=>{
+                            return {
+                              S: true,
+                              M: false,
+                              L: false,
+                            }
+                          })}}>S</div>
+                          <div className={`size ${selected.M && "size-selected"}`} onClick={()=>{setSelected((prev)=>{
+                            return {
+                              S: false,
+                              M: true,
+                              L: false,
+                            }
+                          })}}>M</div>
+                          <div className={`size ${selected.L && "size-selected"}`} onClick={()=>{setSelected((prev)=>{
+                            return {
+                              S: false,
+                              M: false,
+                              L: true,
+                            }
+                          })}}>L</div>
+                        </div>
+                      </div>
+  const phoneSection = <div className="single-product-size">
+                        <div className="size-top">Available RAM</div>
+                        <div className="size-bottom" >
+                          <div style={{padding:"0px 10px"}} className={`size ${selected.S && "size-selected"}`} onClick={()=>{setSelected((prev)=>{
+                            return {
+                              S: true,
+                              M: false,
+                              L: false,
+                            }
+                          })}}>4 GB</div>
+                          <div  style={{padding:"0px 10px"}} className={`size ${selected.M && "size-selected"}`} onClick={()=>{setSelected((prev)=>{
+                            return {
+                              S: false,
+                              M: true,
+                              L: false,
+                            }
+                          })}}>8 GB</div>
+                          <div  style={{padding:"0px 10px"}} className={`size ${selected.L && "size-selected"}`} onClick={()=>{setSelected((prev)=>{
+                            return {
+                              S: false,
+                              M: false,
+                              L: true,
+                            }
+                          })}}>16 GB</div>
+                        </div>
+                      </div>
   return (
     <div className="product-details-container">
       <div className="product-details-top">
@@ -89,36 +142,11 @@ const SingleProductDetails = () => {
           <div className="single-product-name">{productInfo?.name}</div>
           <div className="single-product-rating">Rating {productInfo?.rating} Star</div>
           <div className="single-product-price">{productInfo?.price}</div>
-          <div className="single-product-size">
-            <div className="size-top">Available Size</div>
-            <div className="size-bottom">
-              <div className={`size ${selected.S && "size-selected"}`} onClick={()=>{setSelected((prev)=>{
-                return {
-                  S: true,
-                  M: false,
-                  L: false,
-                }
-              })}}>S</div>
-              <div className={`size ${selected.M && "size-selected"}`} onClick={()=>{setSelected((prev)=>{
-                return {
-                  S: false,
-                  M: true,
-                  L: false,
-                }
-              })}}>M</div>
-              <div className={`size ${selected.L && "size-selected"}`} onClick={()=>{setSelected((prev)=>{
-                return {
-                  S: false,
-                  M: false,
-                  L: true,
-                }
-              })}}>L</div>
-            </div>
-          </div>
+          {isCloths && sizeSection}
+          {isPhone && phoneSection}
           <div className="single-product-quantity">
             <div className="quantity-top">Quantity</div>
             <div className="quantity-bottom">
-            {/* <Alert  onClose={() => {}} severity="warning" >Please Select Quantity !</Alert> */}
               <div className="quantity">
                 <div className="add-quantity" onClick={increaceQuantityHandler}>+</div>
                 <div className="quantity-number">{quantity}</div>

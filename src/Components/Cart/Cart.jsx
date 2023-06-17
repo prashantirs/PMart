@@ -31,6 +31,7 @@ const Cart = () => {
   useEffect(() => {
     calculatePrice();
   }, [cart]);
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -56,7 +57,7 @@ const Cart = () => {
         </div>
         <div className="cart-right-GrandTotal">
         <div className="cart-right-SubTotal-Text">Grandtotal</div>
-          <div className="cart-right-SubTotal-Price">₹ {price/4}</div>
+          <div className="cart-right-SubTotal-Price">₹ {(price/4)*3}</div>
         </div>
         <div className="cart-right-Total">Place Order</div>
       </div>
