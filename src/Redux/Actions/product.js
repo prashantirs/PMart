@@ -25,6 +25,15 @@ export const addSelectedProduct = (data) => {
         payload: data,
     }
 }
+export const addToCartFromProduct = (data,quantity=1) => {
+    return {
+        type: ActionTypes.ADD_TO_CART_FROM_PRODUCT,
+        payload: {
+            data: data,
+            quantity: quantity,
+        }
+    }
+}
 export const removeSelectedProduct = () => {
     return {
         type: ActionTypes.REMOVE_SELECTED_PRODUCT,

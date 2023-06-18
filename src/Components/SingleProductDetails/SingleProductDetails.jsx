@@ -5,7 +5,7 @@ import { getProductByID } from "../../helpers/products";
 import { checkArraySanity, checkObjectSanity } from "../../helpers/utils";
 import './SingleProductDetails.css'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { addToCart, decreaseQuantity, increaseQuantity } from "../../Redux/Actions/product";
+import { addToCart, addToCartFromProduct, decreaseQuantity, increaseQuantity } from "../../Redux/Actions/product";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
 import Alert from '@mui/material/Alert';
@@ -61,7 +61,8 @@ const SingleProductDetails = () => {
       toast.error("Please select quantity");
       return;
     }
-    dispatch(addToCart(productInfo));
+    // dispatch(addToCart(productInfo));
+    dispatch(addToCartFromProduct(productInfo, quantity));
     setAddedToCart(true);
     toast.success("Added to Cart");
   }
@@ -70,8 +71,9 @@ const SingleProductDetails = () => {
     window.scrollTo(0, 0);
     checkQuantity();
   }, []);
-  const isCloths = productInfo?.catogeries === "fashion" || "Sports";
+  const isCloths = productInfo?.catogeries === "fashion" || productInfo?.catogeries === "Sports" || productInfo?.catogeries === "Beauty and Cosmetics" ;
   const isPhone = productInfo?.catogeries === "phone";
+  
   const sizeSection = <div className="single-product-size">
                         <div className="size-top">Available Size</div>
                         <div className="size-bottom">

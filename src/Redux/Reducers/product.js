@@ -7,7 +7,7 @@ export const CartReducer = (state = [], {type,payload}) => {
             if(filteredList.length > 0){
                 return state.map((item) => {
                     if(item.id === payload.id){
-                        return {...item, quantity: item.quantity + 1}
+                        return {...item, quantity: 1}
                     }else{
                         return item;
                     }
@@ -32,7 +32,23 @@ export const CartReducer = (state = [], {type,payload}) => {
                     item.quantity -= 1;
                 }
             })
-            return state;            
+            return state;   
+        case ActionTypes.ADD_TO_CART_FROM_PRODUCT:  
+        console.log(payload)
+        console.log(state)
+            const filteredList2 = state.filter((item) => item.id === payload.data.id)
+            if(filteredList2.length > 0){
+                return state.map((item) => {
+                    if(item.id === payload.data.id){
+                        return {...item, quantity: payload.quantity}
+                    }else{
+                        return item;
+                    }
+                })
+            }else{
+                return [...state,{...payload.data, quantity: payload.quantity}];
+            }
+        
 
         default:
             return state;    

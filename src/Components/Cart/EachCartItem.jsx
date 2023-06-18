@@ -3,8 +3,10 @@ import ClearIcon from '@mui/icons-material/Clear';
 import { useDispatch, useSelector } from 'react-redux';
 import { decreaseQuantity, increaseQuantity } from '../../Redux/Actions/product';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const EachCartItem = ({id,image,name,rating,quantity,price,productObj,oncalculatePrice}) => {
+  const navigate = useNavigate();
   let ChangedName = name
   if(window.innerWidth < 400){
     if(name.length > 20){
@@ -34,8 +36,8 @@ const EachCartItem = ({id,image,name,rating,quantity,price,productObj,oncalculat
   return (
     <div className='cart-box'>
    
-        <div className="cart-box-left">
-            <div className="cart-image">
+        <div className="cart-box-left" onClick={()=>{navigate(`/product/${id}`)}}>
+            <div className="cart-image" >
                  <img src={image[0]} alt="mobile" className='cart-box-left-image'/>
             </div>
             <div className="cart-product-desc">
