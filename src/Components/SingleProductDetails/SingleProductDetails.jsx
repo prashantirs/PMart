@@ -54,6 +54,7 @@ const SingleProductDetails = () => {
     if(quantity > 0){
       dispatch(decreaseQuantity(productID))
       setQuantity((prev)=>prev-1);
+      setAddedToCart(false);
     }
   }
   const addToCartHandler = () => {
@@ -126,6 +127,16 @@ const SingleProductDetails = () => {
                           })}}>16 GB</div>
                         </div>
                       </div>
+  const goToCart = <div className="product-cart-icon" >
+                    <button className='add-to-cart cartaddicon' onClick={()=>{navigate('/cart')}} >
+                      Go to Cart
+                    </button>
+                  </div>
+  const addToCartButton = <div className="product-cart-icon" >
+                            <button className='add-to-cart cartaddicon' onClick={addToCartHandler} disabled={addedToCart}>
+                              Add to Cart
+                            </button>
+                          </div>                                    
   return (
     <div className="product-details-container">
       <div className="product-details-top">
@@ -154,11 +165,9 @@ const SingleProductDetails = () => {
                 <div className="quantity-number">{quantity}</div>
                 <div className="sub-quantity" onClick={decreaseQuantityHandler}>-</div>
             </div>
-            <div className="product-cart-icon" >
-                <button className='add-to-cart cartaddicon' onClick={addToCartHandler} disabled={addedToCart}>
-                  Add to Cart
-                </button>
-            </div>
+            
+            {!addedToCart && addToCartButton}
+            {addedToCart && goToCart}
             </div>
           </div>
         </div>

@@ -8,6 +8,7 @@ import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 const ProductCard = ({image,name,productObj}) => {
+  const [isAddedToCart, setIsAddedToCart] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const FirstLetterCapital = name.charAt(0).toUpperCase();
@@ -26,8 +27,13 @@ const ProductCard = ({image,name,productObj}) => {
   };
   
   const addToCartHandler = () => {
-    toast.success("Added to Cart");
+    if(isAddedToCart){
+      toast.error("Already Added to Cart");
+      return;
+    }
     dispatch(addToCart(productObj));
+    setIsAddedToCart(true);
+    toast.success("Added to Cart");
   }
   
   const productCardHandler = () =>{
@@ -47,10 +53,10 @@ const ProductCard = ({image,name,productObj}) => {
         <div className="description" >
             <div className="ProductDescription"  onClick={productCardHandler}>
                 <h3 className='product-name'>{`${EditedName}...`}</h3>
-                <p className='product-price'>Rs. 1000</p>
+                <p className='product-price'>{productObj.price}</p>
             </div>
             <div className="product-cart-icon" onClick={addToCartHandler}>
-                <button className='add-to-cart'>
+                <button className='add-to-cart' disabled={isAddedToCart}>
                   <ShoppingCartIcon fontSize='medium' style={{color:"white"}}/>
                 </button>
             </div>

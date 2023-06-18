@@ -43,6 +43,9 @@
     justify-content: center;
     cursor: pointer;
 }
+.add-to-cart:disabled{
+    background-color: #6c6d6f;
+}
 .product-cart-icon{
     cursor: pointer;
 }
