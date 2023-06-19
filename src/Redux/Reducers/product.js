@@ -46,11 +46,11 @@ export const CartReducer = (state = [], {type,payload}) => {
             }else{
                 return [...state,{...payload.data, quantity: payload.quantity}];
             }
-        case ActionTypes.IS_LIKED:
-            const cart = state.length
-            if(cart > 0){
-                return [...state,{...payload}];
-            }
+        // case ActionTypes.IS_LIKED:
+        //     const cart = state.length
+        //     if(cart > 0){
+        //         return [...state,{...payload}];
+        //     }
 
         default:
             return state;    
