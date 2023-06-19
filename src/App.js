@@ -9,9 +9,11 @@ import Home from "./Components/Home/Home";
 import Cart from "./Components/Cart/Cart";
 import Footer from "./Components/Footer/Footer";
 import SingleProductDetails from "./Components/SingleProductDetails/SingleProductDetails";
+import Favourite from "./Components/Favourite/Favourite";
+
 
 function App() {
-
+  
   return (
     <>
       <Router>
@@ -23,6 +25,7 @@ function App() {
           <Route path="/shopwomen" element={<ShopWomen/>} />
           <Route path="/shopcasual" element={<ShopCasual/>} />
           <Route path="/product/:productID" element={<SingleProductDetails/>} />
+          <Route path="/favourite" element={<Favourite/>} />
           <Route path="/cart" element={<Cart/>} />
         </Routes>
         <Footer/>

@@ -2,27 +2,29 @@ import './ProductCard.css'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { AiFillHeart,AiOutlineHeart } from "react-icons/ai";
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addSelectedProduct, addToCart, removeSelectedProduct } from '../../Redux/Actions/product';
+import { useDispatch, useSelector } from 'react-redux';
+import { addSelectedProduct, addToCart, addToFavorite, removeSelectedProduct, removeFromFavorite, setLiked } from '../../Redux/Actions/product';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
-const ProductCard = ({image,name,productObj}) => {
+const ProductCard = ({image,name,productObj,liked}) => {
   const [isAddedToCart, setIsAddedToCart] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const FirstLetterCapital = name.charAt(0).toUpperCase();
   const changedName = FirstLetterCapital + name.slice(1);
   const EditedName = changedName.slice(0,25);
-
-  const [isLiked, setIsLiked] = useState(false);
-
+  const [isLiked, setIsLiked] = useState(false || liked);
+  
   const handleLike = () => {
     setIsLiked(!isLiked)
     if(!isLiked){
+      dispatch(setLiked(productObj.id));
+      dispatch(addToFavorite(productObj))
       toast.success("Added To Favorite");
     }else{
       toast.error("Removed From Favorite");
+      dispatch(removeFromFavorite(productObj.id))
     }
   };
   

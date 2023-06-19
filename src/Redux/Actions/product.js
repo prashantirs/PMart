@@ -39,3 +39,22 @@ export const removeSelectedProduct = () => {
         type: ActionTypes.REMOVE_SELECTED_PRODUCT,
     }
 }
+
+export const addToFavorite = (data) => {
+    return {
+        type: ActionTypes.ADD_TO_FAVORITE,
+        payload: data,
+    }
+}
+export const removeFromFavorite = (id) => {
+    return {
+        type: ActionTypes.REMOVE_FROM_FAVORITE,
+        payload: id,
+    }
+}
+export const setLiked = (id) => {
+    return {
+        type: ActionTypes.IS_LIKED,
+        payload: id,
+    }
+}

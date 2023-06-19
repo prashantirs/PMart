@@ -7,7 +7,7 @@ export const CartReducer = (state = [], {type,payload}) => {
             if(filteredList.length > 0){
                 return state.map((item) => {
                     if(item.id === payload.id){
-                        return {...item, quantity: 1}
+                        return {...item, quantity: 1,favourite : false}
                     }else{
                         return item;
                     }
@@ -34,8 +34,6 @@ export const CartReducer = (state = [], {type,payload}) => {
             })
             return state;   
         case ActionTypes.ADD_TO_CART_FROM_PRODUCT:  
-        console.log(payload)
-        console.log(state)
             const filteredList2 = state.filter((item) => item.id === payload.data.id)
             if(filteredList2.length > 0){
                 return state.map((item) => {
@@ -48,7 +46,11 @@ export const CartReducer = (state = [], {type,payload}) => {
             }else{
                 return [...state,{...payload.data, quantity: payload.quantity}];
             }
-        
+        case ActionTypes.IS_LIKED:
+            const cart = state.length
+            if(cart > 0){
+                return [...state,{...payload, favourite: true}];
+            }
 
         default:
             return state;    
@@ -63,4 +65,25 @@ export const SelectedProductReducer = (state = {}, {type,payload}) => {
         default:
             return state;
     }
+}
+
+export const FavouriteReducer = (state = [], {type,payload}) => {
+    switch(type){
+        case ActionTypes.ADD_TO_FAVORITE:
+           const filterFav = state.filter((item)=> item.id === payload.id)
+           if(filterFav.length > 0){
+                 return state
+           }
+           return [...state, {...payload,favourite : true}]
+
+        case ActionTypes.REMOVE_FROM_FAVORITE:
+            const filteredFavouriteItems = state.filter((item)=>  item.id !== payload )
+            if(filteredFavouriteItems.length > 0){
+                return filteredFavouriteItems
+            }
+            return   state;  
+        default:
+            return state;
+    }
+    
 }

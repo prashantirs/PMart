@@ -3,7 +3,8 @@ import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 import SentimentDissatisfiedIcon from "@mui/icons-material/SentimentDissatisfied";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -12,7 +13,7 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import Badge from '@mui/material/Badge';
@@ -38,6 +39,7 @@ const getLocalData = () => {
   }
   
   const Header = () => {
+  const isFavourite = window.location.pathname === "/favourite"
   const navigate = useNavigate();
   const [name, setName] = useState(getLocalData())
   const [displayName, setDisplayName] = useState(name)
@@ -86,6 +88,12 @@ const getLocalData = () => {
           <input type="text" placeholder="Search" />
         </div>
         <div className="header-right-icons">
+          {isFavourite ? <FavoriteIcon style={{color:"red"}} onClick={()=>{navigate("/favourite")}}/> :
+            <FavoriteBorderIcon onClick={()=>{navigate("/favourite")}}/>
+          }
+        
+        
+
           <div className="cart" onClick={()=>{navigate("/cart")}}>
           <StyledBadge fontSize="large" badgeContent={CartItems} color="secondary">
             <ShoppingCartOutlinedIcon fontSize="large" />
