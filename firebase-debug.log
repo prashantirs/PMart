@@ -1,0 +1,44 @@
+[debug] [2023-06-19T12:51:34.478Z] ----------------------------------------------------------------------
+[debug] [2023-06-19T12:51:34.480Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Prashant Srivastava\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-06-19T12:51:34.480Z] CLI Version:   12.3.1
+[debug] [2023-06-19T12:51:34.480Z] Platform:      win32
+[debug] [2023-06-19T12:51:34.481Z] Node Version:  v16.17.1
+[debug] [2023-06-19T12:51:34.481Z] Time:          Mon Jun 19 2023 18:21:34 GMT+0530 (India Standard Time)
+[debug] [2023-06-19T12:51:34.481Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-06-19T12:51:34.536Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-19T12:51:34.537Z] > authorizing via signed-in user (prashantsrivastava381@gmail.com)
+[debug] [2023-06-19T12:51:34.537Z] [iam] checking project pmart-ef136 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-06-19T12:51:34.538Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/pmart-ef136:testIamPermissions [none]
+[debug] [2023-06-19T12:51:34.538Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/pmart-ef136:testIamPermissions x-goog-quota-user=projects/pmart-ef136
+[debug] [2023-06-19T12:51:34.539Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pmart-ef136:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-06-19T12:51:34.554Z] [iam] error while checking permissions, command may fail: FirebaseError: Failed to make request to https://cloudresourcemanager.googleapis.com/v1/projects/pmart-ef136:testIamPermissions
+[debug] [2023-06-19T12:51:34.556Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pmart-ef136 [none]
+[debug] [2023-06-19T12:51:34.562Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/pmart-ef136
+[debug] [2023-06-19T12:51:34.578Z] FirebaseError: Failed to make request to https://firebase.googleapis.com/v1beta1/projects/pmart-ef136
+    at RetryOperation._fn (C:\Users\Prashant Srivastava\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:242:31)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project pmart-ef136. Please make sure the project exists and your account has permission to access it.
+[debug] [2023-06-19T12:52:25.417Z] ----------------------------------------------------------------------
+[debug] [2023-06-19T12:52:25.418Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Prashant Srivastava\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-06-19T12:52:25.418Z] CLI Version:   12.3.1
+[debug] [2023-06-19T12:52:25.419Z] Platform:      win32
+[debug] [2023-06-19T12:52:25.419Z] Node Version:  v16.17.1
+[debug] [2023-06-19T12:52:25.419Z] Time:          Mon Jun 19 2023 18:22:25 GMT+0530 (India Standard Time)
+[debug] [2023-06-19T12:52:25.420Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-06-19T12:52:25.473Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-19T12:52:25.474Z] > authorizing via signed-in user (prashantsrivastava381@gmail.com)
+[debug] [2023-06-19T12:52:25.474Z] [iam] checking project pmart-ef136 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-06-19T12:52:25.476Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/pmart-ef136:testIamPermissions [none]
+[debug] [2023-06-19T12:52:25.476Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/pmart-ef136:testIamPermissions x-goog-quota-user=projects/pmart-ef136
+[debug] [2023-06-19T12:52:25.476Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pmart-ef136:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-06-19T12:52:46.591Z] [iam] error while checking permissions, command may fail: FirebaseError: Failed to make request to https://cloudresourcemanager.googleapis.com/v1/projects/pmart-ef136:testIamPermissions
+[debug] [2023-06-19T12:52:46.592Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pmart-ef136 [none]
+[debug] [2023-06-19T12:52:46.818Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/pmart-ef136
+[debug] [2023-06-19T12:52:46.850Z] FirebaseError: Failed to make request to https://firebase.googleapis.com/v1beta1/projects/pmart-ef136
+    at RetryOperation._fn (C:\Users\Prashant Srivastava\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:242:31)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project pmart-ef136. Please make sure the project exists and your account has permission to access it.
