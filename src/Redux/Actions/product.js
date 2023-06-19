@@ -58,3 +58,9 @@ export const setLiked = (id) => {
         payload: id,
     }
 }
+export const setUser = (user) => {
+    return {
+        type: ActionTypes.SET_USER,
+        payload: user,
+    }
+}

@@ -14,10 +14,20 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
+
+
+import {  getRedirectResult,GoogleAuthProvider } from "firebase/auth";
+import { signInWithGoogle ,auth} from "../../Firebase/firebase";
+import { setUser } from "../../Redux/Actions/product";
+import { debounce } from "../../helpers/utils";
+import { searchProducts } from "../../helpers/products";
+
+import { ReactSearchAutocomplete } from 'react-search-autocomplete'
+import product  from "../../API/products";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -38,7 +48,10 @@ const getLocalData = () => {
     }
   }
   
-  const Header = () => {
+  const Header = () => {  
+
+  const dispatch = useDispatch();
+  const [searchItem, setSearchItem] = useState([]);
   const isFavourite = window.location.pathname === "/favourite"
   const navigate = useNavigate();
   const [name, setName] = useState(getLocalData())
@@ -49,6 +62,7 @@ const getLocalData = () => {
   const CartItems = cart.length;
 
   const [open, setOpen] = useState(false);
+  const setUserHelper = (user)=> dispatch(setUser(user))
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -74,28 +88,74 @@ const getLocalData = () => {
     localStorage.setItem('user-name', JSON.stringify(e.target.value));
     
   }
+  const googleLoginHandler = () => {
+    signInWithGoogle(setUserHelper);
+    } 
+  const searchHandler = (e,result) => {
+    console.log(e)
+    // debounce(()=>setSearchItem(searchProducts(e.target.value)))
+  }
+
+  // }
+
+  const handleOnSearch = (e) => {
+    debounce(()=>setSearchItem(searchProducts(e.target.value)))
+  };
+
+  const handleOnHover = (result) => {
+    console.log(result);
+  };
+
+  const handleOnSelect = (item) => {
+    window.location = `/product/${item.id}`;
+  };
+
+  const handleOnFocus = () => {
+    console.log("Focused");
+  };
+
+  const handleOnClear = () => {
+    console.log("Cleared");
+  };
+
+    console.log(searchItem)
   return (
+    
+ 
     <div className="header">
       <div className="header-left">
-        <h1 className="company-name" onClick={()=>{navigate("/")}}>PMart</h1>
+         <h1 className="company-name" onClick={()=>{navigate("/")}}>PMart</h1>
       </div>
       <div className="header-center">
-        <div className="menu">Shop</div>
+        {/* <div className="menu">Shop</div>
         <div className="menu">New Arrivals</div>
-        <div className="menu">Brands</div>
+        <div className="menu">Brands</div> */}
+        <ReactSearchAutocomplete
+          items={product}
+          onSearch={searchHandler}
+          placeholder="Search for product, brands and more"
+          onHover={handleOnHover}
+            onSelect={handleOnSelect}
+            onFocus={handleOnFocus}
+            className="search-bar"
+        />
+      
       </div>
       <div className="header-right">
         <div className="header-right-search">
-          <SearchIcon fontSize="large" className="search-icon" />
-          <input type="text" placeholder="Search" />
+          {/* <SearchIcon fontSize="large" className="search-icon" />
+          <input type="text" placeholder="Search" onChange={searchHandler}/> */}
+        
+
+
         </div>
         <div className="header-right-icons">
           {isFavourite ? 
-            <StyledBadge fontSize="large" badgeContent={favouriteItems} color="info">
-              <FavoriteIcon style={{color:"#d02525"}} onClick={()=>{navigate("/favourite")}} fontSize="large"/>
+            <StyledBadge fontSize={window.innerWidth < 600 ? "small" : "large"} badgeContent={favouriteItems} color="info">
+              <FavoriteIcon style={{color:"#d02525"}} onClick={()=>{navigate("/favourite")}} fontSize={window.innerWidth < 600 ? "small" : "large"}/>
             </StyledBadge> :
-            <StyledBadge fontSize="large" badgeContent={favouriteItems} color="error">
-              <FavoriteBorderIcon onClick={()=>{navigate("/favourite")}} fontSize="large"/>
+            <StyledBadge fontSize={window.innerWidth < 600 ? "small" : "large"} badgeContent={favouriteItems} color="error">
+              <FavoriteBorderIcon onClick={()=>{navigate("/favourite")}} fontSize={window.innerWidth < 600 ? "small" : "large"}/>
              </StyledBadge>
           }
         
@@ -103,11 +163,11 @@ const getLocalData = () => {
             
 
           <div className="cart" onClick={()=>{navigate("/cart")}}>
-            <StyledBadge fontSize="large" badgeContent={CartItems} color="secondary">
-              <ShoppingCartOutlinedIcon fontSize="large" />
+            <StyledBadge fontSize={window.innerWidth < 600 ? "small" : "large"} badgeContent={CartItems} color="secondary">
+              <ShoppingCartOutlinedIcon fontSize={window.innerWidth < 600 ? "small" : "large"} />
             </StyledBadge>
           </div>
-          <div className="login-user" >
+          {/* <div className="login-user" >
             
             <div className="svg-icon">{displayName === "Login" || "" ? <SentimentDissatisfiedIcon className="login-icon" fontSize="large" /> : <InsertEmoticonIcon fontSize="large" />}</div>
             <Button className="dialog-button"onClick={handleClickOpen}>
@@ -132,7 +192,10 @@ const getLocalData = () => {
                 <Button onClick={handleCloseLogout}>Logout</Button>
                 <Button onClick={handleCloseLogin}>Login</Button>
               </DialogActions>
-            </Dialog>
+            </Dialog> */}
+            <div className="login-user">
+              <button className="login-button" onClick={googleLoginHandler}>Login</button>
+            </div>
         </div>
       </div>
     </div>

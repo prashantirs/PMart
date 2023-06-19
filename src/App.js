@@ -13,7 +13,6 @@ import Favourite from "./Components/Favourite/Favourite";
 
 
 function App() {
-  
   return (
     <>
       <Router>

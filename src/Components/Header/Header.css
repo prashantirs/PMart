@@ -70,7 +70,7 @@ input[type="text"]::placeholder{
     font-weight: 400;
     align-items: center;
 }
-.search-icon{
+/* .search-icon{
     color: #ccc;
     cursor: pointer;
     border: 1px solid #ccc;
@@ -81,7 +81,7 @@ input[type="text"]::placeholder{
     background-color: white;
     position: relative;
     bottom: 0.2px;
-}
+} */
 .login-user{
     padding-top: 1.2rem;
 }
@@ -101,13 +101,25 @@ input[type="text"]::placeholder{
     justify-content: center;
     text-align: center;
 }
+.search-bar{
+    z-index: 99999999999999999999999999999999 !important;
+    width: 40rem;
+}
 @media (max-width:1028px) {
     .header{
         padding: 1rem 1rem;
         padding-bottom: 0.5rem;
     }
+    .company-name{
+        font-size: 1.5rem;
+        /* margin-top: 1rem; */
+    }
     .header-center{
-        display: none
+        /* display: none */
+        position: relative;
+        /* top: 1rem; */
+        right: 0rem;
+        width: 6rem;
     }
     .header-right-search{
         display: none;
