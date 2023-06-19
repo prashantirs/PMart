@@ -1,5 +1,6 @@
 .Cart-Section {
-  margin-top: 7rem;
+  /* margin-top: 7rem; */
+  margin-top: 89.8px;
   display: flex;
   background-color: #f1f3f6;
   color: #29303e;
@@ -30,7 +31,7 @@
     flex-direction: column;
     /* height: 19rem; */
     position: sticky;
-    top: 18%;
+    top: 16%;
     right: 2%;
     background-color: white;
     border: 1px solid #dadada;
