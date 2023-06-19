@@ -49,7 +49,7 @@ export const CartReducer = (state = [], {type,payload}) => {
         case ActionTypes.IS_LIKED:
             const cart = state.length
             if(cart > 0){
-                return [...state,{...payload, favourite: true}];
+                return [...state,{...payload}];
             }
 
         default:
@@ -80,6 +80,8 @@ export const FavouriteReducer = (state = [], {type,payload}) => {
             const filteredFavouriteItems = state.filter((item)=>  item.id !== payload )
             if(filteredFavouriteItems.length > 0){
                 return filteredFavouriteItems
+            }else{
+                return []
             }
             return   state;  
         default:
