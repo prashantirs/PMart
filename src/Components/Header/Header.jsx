@@ -44,6 +44,8 @@ const getLocalData = () => {
   const [name, setName] = useState(getLocalData())
   const [displayName, setDisplayName] = useState(name)
   const cart  = useSelector((state => state.cart));
+  const favourite  = useSelector((state => state.favourite));
+  const favouriteItems = favourite.length;
   const CartItems = cart.length;
 
   const [open, setOpen] = useState(false);
@@ -88,15 +90,21 @@ const getLocalData = () => {
           <input type="text" placeholder="Search" />
         </div>
         <div className="header-right-icons">
-          {isFavourite ? <FavoriteIcon style={{color:"red"}} onClick={()=>{navigate("/favourite")}}/> :
-            <FavoriteBorderIcon onClick={()=>{navigate("/favourite")}}/>
+          {isFavourite ? 
+            <StyledBadge fontSize="large" badgeContent={favouriteItems} color="info">
+              <FavoriteIcon style={{color:"#d02525"}} onClick={()=>{navigate("/favourite")}} fontSize="large"/>
+            </StyledBadge> :
+            <StyledBadge fontSize="large" badgeContent={favouriteItems} color="error">
+              <FavoriteBorderIcon onClick={()=>{navigate("/favourite")}} fontSize="large"/>
+             </StyledBadge>
           }
         
-        
+            
+            
 
           <div className="cart" onClick={()=>{navigate("/cart")}}>
-          <StyledBadge fontSize="large" badgeContent={CartItems} color="secondary">
-            <ShoppingCartOutlinedIcon fontSize="large" />
+            <StyledBadge fontSize="large" badgeContent={CartItems} color="secondary">
+              <ShoppingCartOutlinedIcon fontSize="large" />
             </StyledBadge>
           </div>
           <div className="login-user" >
