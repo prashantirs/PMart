@@ -10,6 +10,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
 import Alert from '@mui/material/Alert';
 
+import ReactStars from 'react-stars'
+import { render } from 'react-dom'
+ 
+const ratingChanged = (newRating) => {
+  console.log(newRating)
+}
+
 const SingleProductDetails = () => {
   const [productInfo, setProductInfo] = useState();
   const [addedToCart, setAddedToCart] = useState(false);
@@ -153,7 +160,15 @@ const SingleProductDetails = () => {
         </div>
         <div className="product-details-top-right">
           <div className="single-product-name">{productInfo?.name}</div>
-          <div className="single-product-rating">Rating {productInfo?.rating} Star</div>
+          {/* <div className="single-product-rating">Rating {productInfo?.rating} Star</div> */}
+          <div className="single-product-rating">
+          <ReactStars
+            count={5}
+            onChange={ratingChanged}
+            size={24}
+            value={productInfo?.rating}
+            color2={'#ffd700'} />
+          </div>
           <div className="single-product-price">{productInfo?.price}</div>
           {isCloths && sizeSection}
           {isPhone && phoneSection}

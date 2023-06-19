@@ -83,7 +83,6 @@ export const FavouriteReducer = (state = [], {type,payload}) => {
             }else{
                 return []
             }
-            return   state;  
         default:
             return state;
     }
