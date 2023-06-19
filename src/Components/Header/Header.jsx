@@ -64,6 +64,10 @@ const getLocalData = () => {
   const [open, setOpen] = useState(false);
   const setUserHelper = (user)=> dispatch(setUser(user))
 
+  const user = useSelector((state) => state.user);  
+  console.log(user)
+  const userLoggedIn = Object.keys(user).length
+  
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -167,35 +171,13 @@ const getLocalData = () => {
               <ShoppingCartOutlinedIcon fontSize={window.innerWidth < 600 ? "small" : "large"} />
             </StyledBadge>
           </div>
-          {/* <div className="login-user" >
-            
-            <div className="svg-icon">{displayName === "Login" || "" ? <SentimentDissatisfiedIcon className="login-icon" fontSize="large" /> : <InsertEmoticonIcon fontSize="large" />}</div>
-            <Button className="dialog-button"onClick={handleClickOpen}>
-              <div className="login-user-name">{displayName}</div>
-            </Button>
-            </div>
-            <Dialog open={open} onClose={handleClose}>
-              <DialogTitle>Name</DialogTitle>
-              <DialogContent>
-                <TextField
-                  autoFocus
-                  margin="dense"
-                  id="name"
-                  label="User Name"
-                  type="email"
-                  fullWidth
-                  variant="standard"
-                  onChange={nameHandler}
-                />
-              </DialogContent>
-              <DialogActions>
-                <Button onClick={handleCloseLogout}>Logout</Button>
-                <Button onClick={handleCloseLogin}>Login</Button>
-              </DialogActions>
-            </Dialog> */}
-            <div className="login-user">
+           {!userLoggedIn ? <div className="login-user">
               <button className="login-button" onClick={googleLoginHandler}>Login</button>
+            </div> :
+            <div className="login-user">
+              <img src={user.photoURL} alt="user_image" className="logged-in-user" onClick={()=> navigate('/me')}/>
             </div>
+           }
         </div>
       </div>
     </div>

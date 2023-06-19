@@ -10,4 +10,5 @@ export const ActionTypes = {
     REMOVE_FROM_FAVORITE: "REMOVE_FROM_FAVORITE",
     IS_LIKED: "IS_LIKED",
     SET_USER: "SET_USER",
+    LOGOUT: "LOGOUT",
 }

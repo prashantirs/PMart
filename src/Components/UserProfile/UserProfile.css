@@ -1,0 +1,16 @@
+.user-profile {
+  margin-top: 5rem;
+  display: flex;
+  background-color: #f1f3f6;
+  color: #29303e;
+  min-height: 91vh;
+  padding: 10rem 20rem;
+
+  align-items: start;
+}
+.user-profile > * {
+  margin: 20px;
+}
+.login-user{
+    
+}

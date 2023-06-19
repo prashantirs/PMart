@@ -10,6 +10,7 @@ import Cart from "./Components/Cart/Cart";
 import Footer from "./Components/Footer/Footer";
 import SingleProductDetails from "./Components/SingleProductDetails/SingleProductDetails";
 import Favourite from "./Components/Favourite/Favourite";
+import UserProfile from "./Components/UserProfile/UserProfile";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path="/product/:productID" element={<SingleProductDetails/>} />
           <Route path="/favourite" element={<Favourite/>} />
           <Route path="/cart" element={<Cart/>} />
+          <Route path="/me" element={<UserProfile/>} />
         </Routes>
         <Footer/>
         <Toaster position="bottom-left" toastOptions={{style:{zIndex:100000}}}/>

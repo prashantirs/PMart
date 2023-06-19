@@ -82,8 +82,17 @@ input[type="text"]::placeholder{
     position: relative;
     bottom: 0.2px;
 } */
-.login-user{
-    padding-top: 1.2rem;
+.logged-in-user{
+    border-radius: 100%;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 1rem;
+    margin-left: 1rem;
+
+
 }
 .login-user-name{
     font-family: cursive;
@@ -104,6 +113,17 @@ input[type="text"]::placeholder{
 .search-bar{
     z-index: 99999999999999999999999999999999 !important;
     width: 40rem;
+}
+.login-button{
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+
 }
 @media (max-width:1028px) {
     .header{

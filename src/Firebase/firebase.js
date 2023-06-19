@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithRedirect } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-import { getRedirectResult, GoogleAuthProvider,signInWithPopup } from "firebase/auth";
+import { getRedirectResult, GoogleAuthProvider,signInWithPopup,signOut } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { setUser } from "../Redux/Actions/product";
 
@@ -48,6 +48,17 @@ export const signInWithGoogle = (callBack) => {
   });
 
 
+}
+
+
+export const logout = () => {
+  signOut(auth).then(() => {
+    // Sign-out successful.
+    console.log("Sign-out successful.");
+  }).catch((error) => {
+    // An error happened.
+    console.log("An error happened.");
+  });
 }
 
 export default app;

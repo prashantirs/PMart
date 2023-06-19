@@ -94,7 +94,7 @@ export const userReducer = (state = {}, {type,payload}) => {
             console.log("payload",payload)
             const {displayName,email,photoURL,uid } = payload
             return {...state, displayName,email,photoURL,uid}
-        case ActionTypes.USER_LOGOUT:
+        case ActionTypes.LOGOUT:
             return {}
         default:
             return state;

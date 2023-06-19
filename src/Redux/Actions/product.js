@@ -64,3 +64,8 @@ export const setUser = (user) => {
         payload: user,
     }
 }
+export const setLogout = () => {
+    return {
+        type: ActionTypes.LOGOUT,
+    }
+}
