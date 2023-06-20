@@ -98,7 +98,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
         <ReactSearchAutocomplete
           items={product}
           onSearch={searchHandler}
-          placeholder="Search for product, brands and more"
+          placeholder={window.innerWidth < 600 ? "Search" : "Search for product, brands and more"}
           onHover={handleOnHover}
             onSelect={handleOnSelect}
             onFocus={handleOnFocus}
@@ -107,8 +107,6 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
       
       </div>
       <div className="header-right">
-        <div className="header-right-search">
-        </div>
         <div className="header-right-icons">
           {isFavourite ? 
             <StyledBadge fontSize={window.innerWidth < 600 ? "small" : "large"} badgeContent={favouriteItems} color="info">
@@ -125,10 +123,10 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
             </StyledBadge>
           </div>
            {!userLoggedIn ? <div className="login-user">
-              <button className="login-button" onClick={googleLoginHandler}>Login</button>
+              <button className="login-button login-phone-button" onClick={googleLoginHandler}>Login</button>
             </div> :
             <div className="login-user">
-              <img src={localStorageUser[0]?.photoURL} alt="user_image" className="logged-in-user" onClick={()=> navigate('/me')}/>
+              <img src={localStorageUser[0].photoURL} alt="user_image" className="logged-in-user" onClick={()=> navigate('/me')}/>
             </div>
            }
         </div>

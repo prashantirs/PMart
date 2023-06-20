@@ -71,6 +71,7 @@
   .Cart-Section{
     flex-direction: column;
     align-items: center;
+    margin-top:69.8px;
   }
   .cart-left {
     width: 90%;
