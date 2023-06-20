@@ -4,6 +4,7 @@ import { getFirestore } from "firebase/firestore";
 import { getRedirectResult, GoogleAuthProvider,signInWithPopup,signOut } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { setUser } from "../Redux/Actions/product";
+import { setLocalData } from "../helpers/utils";
 
 
 
@@ -33,6 +34,7 @@ export const signInWithGoogle = (callBack) => {
     const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
+    setLocalData("user", { displayName: user.displayName,email:user.email,photoURL:user.photoURL,uid:user.uid }); 
     callBack(user);
     // IdP data available using getAdditionalUserInfo(result)
     // ...

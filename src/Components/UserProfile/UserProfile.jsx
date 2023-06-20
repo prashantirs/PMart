@@ -3,17 +3,19 @@ import { logout } from '../../Firebase/firebase';
 import './UserProfile.css'
 import { useDispatch, useSelector } from "react-redux";
 import { setLogout } from '../../Redux/Actions/product';
+import { getLocalData, removeLocalData } from '../../helpers/utils';
+import { useState } from 'react';
 
 const UserProfile = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
-  console.log(user);
-  const userLoggedIn = Object.keys(user).length;
-
+  const userLoggedIn = Object.keys(getLocalData("user")).length;
+  const [user, setUser] = useState(getLocalData("user"));
   const logoutHandler = () => {
     logout();
     dispatch(setLogout());
+    navigate("/");
+    removeLocalData("user")
   };
   return (
     <>

@@ -91,7 +91,6 @@ export const FavouriteReducer = (state = [], {type,payload}) => {
 export const userReducer = (state = {}, {type,payload}) => {
     switch(type){
         case ActionTypes.SET_USER:
-            console.log("payload",payload)
             const {displayName,email,photoURL,uid } = payload
             return {...state, displayName,email,photoURL,uid}
         case ActionTypes.LOGOUT:

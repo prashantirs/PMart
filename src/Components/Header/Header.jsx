@@ -23,7 +23,7 @@ import { styled } from '@mui/material/styles';
 import {  getRedirectResult,GoogleAuthProvider } from "firebase/auth";
 import { signInWithGoogle ,auth} from "../../Firebase/firebase";
 import { setUser } from "../../Redux/Actions/product";
-import { debounce } from "../../helpers/utils";
+import { debounce, getLocalData, removeLocalData, setLocalData } from "../../helpers/utils";
 import { searchProducts } from "../../helpers/products";
 
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
@@ -38,17 +38,12 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 
-//get local starage
-const getLocalData = () => {
-    let user= localStorage.getItem('user-name');
-    if(user){
-      return JSON.parse(localStorage.getItem('user-name'));
-    }else{
-      return "Login";
-    }
-  }
+
   
   const Header = () => {  
+    const [localStorageUser, setLocalStorageUser] = useState(getLocalData("user"))
+    const [refresh, setRefresh] = useState(false);
+   
 
   const dispatch = useDispatch();
   const [searchItem, setSearchItem] = useState([]);
@@ -64,48 +59,22 @@ const getLocalData = () => {
   const [open, setOpen] = useState(false);
   const setUserHelper = (user)=> dispatch(setUser(user))
 
-  const user = useSelector((state) => state.user);  
-  console.log(user)
-  const userLoggedIn = Object.keys(user).length
-  
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  const user = useSelector((state) => state.user);   
+  const userLoggedIn = Object.keys(localStorageUser).length
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const handleCloseLogin = () => {
-    setOpen(false);
-    setDisplayName(name)
-  };
-  
-  const handleCloseLogout = () => {
-    setOpen(false);
-    setName("Login");
-    setDisplayName("Login")
-    localStorage.setItem('user-name', JSON.stringify("Login"));
-  };
+  useEffect(() => {
+    setLocalStorageUser(getLocalData("user"));
+  }, [refresh,user]);
 
-  const nameHandler = (e) => {
-    setName(e.target.value)
-    localStorage.setItem('user-name', JSON.stringify(e.target.value));
-    
-  }
+
+
   const googleLoginHandler = () => {
     signInWithGoogle(setUserHelper);
+  
     } 
   const searchHandler = (e,result) => {
     console.log(e)
-    // debounce(()=>setSearchItem(searchProducts(e.target.value)))
   }
-
-  // }
-
-  const handleOnSearch = (e) => {
-    debounce(()=>setSearchItem(searchProducts(e.target.value)))
-  };
-
   const handleOnHover = (result) => {
     console.log(result);
   };
@@ -118,11 +87,6 @@ const getLocalData = () => {
     console.log("Focused");
   };
 
-  const handleOnClear = () => {
-    console.log("Cleared");
-  };
-
-    console.log(searchItem)
   return (
     
  
@@ -131,9 +95,6 @@ const getLocalData = () => {
          <h1 className="company-name" onClick={()=>{navigate("/")}}>PMart</h1>
       </div>
       <div className="header-center">
-        {/* <div className="menu">Shop</div>
-        <div className="menu">New Arrivals</div>
-        <div className="menu">Brands</div> */}
         <ReactSearchAutocomplete
           items={product}
           onSearch={searchHandler}
@@ -147,11 +108,6 @@ const getLocalData = () => {
       </div>
       <div className="header-right">
         <div className="header-right-search">
-          {/* <SearchIcon fontSize="large" className="search-icon" />
-          <input type="text" placeholder="Search" onChange={searchHandler}/> */}
-        
-
-
         </div>
         <div className="header-right-icons">
           {isFavourite ? 
@@ -162,9 +118,6 @@ const getLocalData = () => {
               <FavoriteBorderIcon onClick={()=>{navigate("/favourite")}} fontSize={window.innerWidth < 600 ? "small" : "large"}/>
              </StyledBadge>
           }
-        
-            
-            
 
           <div className="cart" onClick={()=>{navigate("/cart")}}>
             <StyledBadge fontSize={window.innerWidth < 600 ? "small" : "large"} badgeContent={CartItems} color="secondary">
@@ -175,7 +128,7 @@ const getLocalData = () => {
               <button className="login-button" onClick={googleLoginHandler}>Login</button>
             </div> :
             <div className="login-user">
-              <img src={user.photoURL} alt="user_image" className="logged-in-user" onClick={()=> navigate('/me')}/>
+              <img src={localStorageUser[0]?.photoURL} alt="user_image" className="logged-in-user" onClick={()=> navigate('/me')}/>
             </div>
            }
         </div>

@@ -31,7 +31,7 @@ const SingleProductDetails = () => {
   const [selectedImage, setSelectedImage] = useState(productInfo?.image[0]);
   const navigate = useNavigate();
   const { productID } = useParams();
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
     
 
@@ -46,7 +46,7 @@ const SingleProductDetails = () => {
   const checkQuantity = () =>{
     const index = cart.findIndex((item)=>item.id === productID);
     if(index === -1){
-      setQuantity(0);
+      setQuantity(1);
     }else{
       setQuantity(cart[index].quantity);
     }
@@ -160,7 +160,6 @@ const SingleProductDetails = () => {
         </div>
         <div className="product-details-top-right">
           <div className="single-product-name">{productInfo?.name}</div>
-          {/* <div className="single-product-rating">Rating {productInfo?.rating} Star</div> */}
           <div className="single-product-rating">
           <ReactStars
             count={5}

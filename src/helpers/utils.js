@@ -22,3 +22,27 @@ export const debounce = (callback, delay = 1000) => {
     callback();
   }, delay);
 };
+
+ //get local starage
+export const getLocalData = (key) => {
+    let user = localStorage.getItem(key);
+    if(user){
+      return JSON.parse(localStorage.getItem(key));
+    }
+      return [];
+}
+
+//set local storage
+export const setLocalData = (key, value) => {
+    let isPresent = localStorage.getItem(key);
+    if(!isPresent){
+     localStorage.setItem(key, JSON.stringify([]));
+    }
+    let data = JSON.parse(localStorage.getItem(key));
+    data.push(value);
+    localStorage.setItem(key, JSON.stringify(data));
+}
+
+export const removeLocalData = (key) => {
+    localStorage.removeItem(key);
+}

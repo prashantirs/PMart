@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addSelectedProduct, addToCart, addToFavorite, removeSelectedProduct, removeFromFavorite, setLiked } from '../../Redux/Actions/product';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { setLocalData } from '../../helpers/utils';
 
 const ProductCard = ({image,name,productObj,liked}) => {
   const [isAddedToCart, setIsAddedToCart] = useState(false);
@@ -21,6 +22,7 @@ const ProductCard = ({image,name,productObj,liked}) => {
     if(!isLiked){
       dispatch(setLiked(productObj.id));
       dispatch(addToFavorite(productObj))
+      setLocalData("favourite",productObj);
       toast.success("Added To Favorite");
     }else{
       toast.error("Removed From Favorite");
@@ -33,6 +35,7 @@ const ProductCard = ({image,name,productObj,liked}) => {
       toast.error("Already Added to Cart");
       return;
     }
+    setLocalData("cart",productObj);
     dispatch(addToCart(productObj));
     setIsAddedToCart(true);
     toast.success("Added to Cart");
