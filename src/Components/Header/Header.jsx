@@ -80,7 +80,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   };
 
   const handleOnSelect = (item) => {
-    window.location = `/product/${item.id}`;
+    navigate(`/product/${item.id}`)
   };
 
   const handleOnFocus = () => {
