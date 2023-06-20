@@ -119,15 +119,29 @@
         width: 17rem;
         object-fit: scale-down;
       }
-      .image-bottom-container {
+      /* .image-bottom-container {
         gap: 1rem;
         width: 20rem;
         height: 6rem;
         position: relative;
         right: 1rem;
+      } */
+      .image-bottom-container {
+        gap: 1rem;
+        width: 80vw;
+        height: 5rem;
+        position: relative;
+        right: 1rem;
+        object-fit: scale-down;
       }
-      .image-bottom {
+      /* .image-bottom {
         height: 5rem;
         width: 9rem;
+        object-fit: scale-down;
+      } */
+      .image-bottom {
+        height: 3rem;
+        width: 4rem;
+        object-fit: scale-down;
       }
   }
