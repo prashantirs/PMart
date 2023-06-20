@@ -153,15 +153,14 @@ input[type="text"]::placeholder{
         min-height: 36px !important;
     }
     .logged-in-user{
-        width: 2rem;
-        height: 2rem;
-        margin-right: 1rem;
-        margin-left: 1rem;
+        width: 1.8rem;
+        height: 1.8rem;
+        margin-left: 1.8rem;
         position: relative;
         top: 4px;
     }
     .login-phone-button{
-        margin-left: 1rem;
+        margin-left: 1.5rem;
         padding: 0.5rem 0.5rem;
         font-size: 0.5rem;
     }
