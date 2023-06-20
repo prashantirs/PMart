@@ -10,7 +10,7 @@ const UserProfile = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userLoggedIn = Object.keys(getLocalData("user")).length;
-  const [user, setUser] = useState(getLocalData("user"));
+  const [user, setUser] = useState(getLocalData("user")[0]);
   const logoutHandler = () => {
     logout();
     dispatch(setLogout());
@@ -21,9 +21,9 @@ const UserProfile = () => {
     <>
       {userLoggedIn ? (
         <div className="user-profile">
-            <img src={user.photoURL} alt="user" className="user-profile__img" />
-            <div className="user-profile__name">{user.displayName}</div>
-            <div className="user-profile__email">{user.email}</div>
+            <img src={user?.photoURL} alt="user" className="user-profile__img" />
+            <div className="user-profile__name">{user?.displayName}</div>
+            <div className="user-profile__email">{user?.email}</div>
             <button className="login-button"  onClick={logoutHandler}>Logout</button>
         </div>
       ) : (
