@@ -436,6 +436,27 @@ const data = [
   },
   {
     catogeries: "fashion",
+    id: "70",
+    name: "DUDEME Java Developer | Geek Half Sleeve T Shirt for Men | Coding T Shirt for Coders",
+    rating: "4.7",
+    discription:
+      "100% Combed Cotton DudeMe's combed cotton t-shirts are softer and stronger than regular cotton t-shirts. The cottons we use are made by further treating it after it's been picked, then spun into yarn to remove short fibers, which are prone to breakage. This process helps us deliver the best quality t-shirts without impurities or short protruding threads.",
+    price: "₹569",
+    image: [
+      "https://m.media-amazon.com/images/I/510tKClQmzL._UL1080_.jpg",
+      "https://m.media-amazon.com/images/I/51HHKHy69HL._UL1080_.jpg",
+      "https://m.media-amazon.com/images/I/514lnA2H4vL._UL1080_.jpg",
+      "https://m.media-amazon.com/images/I/61m+DPVikjL._UL1500_.jpg",
+    ],
+    review: [
+      "Simply super and value for money deal. Fits well as well and the cut in the sides look very nice. Loved it. Ordering more in other colors. 5 star rating. ",
+      "Good quality polo from allen solly....got it for 449 rupees....i read so many reviews which says fake product...but this one is original...comfort is also good...i really liked it.... ",
+      "Allen solly is always my fav brand because of fabic fitting n all ",
+      "Very good quality and fittings.",
+    ],
+  },
+  {
+    catogeries: "fashion",
     id: "19",
     name: "Allen Solly",
     rating: "4.4",
@@ -475,6 +496,27 @@ const data = [
       "Super and nice bat . Worth the money . And very light weight Thanks to flip kart.",
       "This bat is very super it is for only 11 to 15 this is very strong also I love this bat this bat is very no cost only 3 45 rupees only",
       "Great bat",
+    ],
+  },
+  {
+    catogeries: "fashion",
+    id: "69",
+    name: "T-shirt Truck Developer Tshirts Printed T-Shirt for Men & Women",
+    rating: "5",
+    discription:
+      "Care Instructions: Wash with mild detergent, do not bleach, dry in shade Fit Type: regular fit 60% cotton and 40% polyester Regular fit ",
+    price: "₹499",
+    image: [
+      "https://m.media-amazon.com/images/I/31HyfPlp+FL.jpg",
+      "https://m.media-amazon.com/images/I/31pc2Dc8EAL.jpg",
+      "https://m.media-amazon.com/images/I/71ChKRO9+IL._UL1280_.jpg",
+      "https://m.media-amazon.com/images/I/41eD82r6DAL.jpg",
+    ],
+    review: [
+      "Simply super and value for money deal. Fits well as well and the cut in the sides look very nice. Loved it. Ordering more in other colors. 5 star rating. ",
+      "Good quality polo from allen solly....got it for 449 rupees....i read so many reviews which says fake product...but this one is original...comfort is also good...i really liked it.... ",
+      "Allen solly is always my fav brand because of fabic fitting n all ",
+      "Very good quality and fittings.",
     ],
   },
 
@@ -673,6 +715,7 @@ const data = [
       "Got both colors as shown in the image, the seam is neat and strong, Fit is also perfect, and as the caption says, the fabric is really soft but not thin, which is great in my opinion, I got it at a discounted price from MRP so it's a steal! Thanks Wear Your Opinion ",
     ],
   },
+  
   {
     catogeries: "fashion",
     id: "30",
@@ -694,6 +737,7 @@ const data = [
       "Good quality material, fit as expected and soft fabric. Satisfied with the quality.",
     ],
   },
+  
   {
     catogeries: "fashion",
     id: "31",
@@ -1149,6 +1193,7 @@ Feedback
       "Good product and it is delivered early. ",
     ],
   },
+  
 ];
 
 export default data;

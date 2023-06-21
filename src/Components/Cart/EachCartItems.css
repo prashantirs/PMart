@@ -4,12 +4,11 @@
     margin-top: 3rem;
     border-radius: 5px;
     padding: 2rem;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
     display: flex;
     justify-content: space-between;
 }
 .cart-box:hover{
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
 }
 
 .cart-box-left-image{

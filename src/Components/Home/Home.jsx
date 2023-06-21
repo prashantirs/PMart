@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Brands from "../Brands/Brands";
 import CategoryProduct from "../CategoryProduct/CategoryProduct";
 import CurratedPicks from "../CurratedPicks/CurratedPicks";
@@ -7,6 +8,9 @@ import TopCarousel from "../TopCarousel/TopCarousel";
 import "./Home.css";
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="container">
       <TopCarousel />

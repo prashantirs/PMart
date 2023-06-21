@@ -13,7 +13,7 @@ const FeaturedProducts = () => {
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 5,
+      items: 4,
       // slidesToSlide: 3
     },
     tablet: {
