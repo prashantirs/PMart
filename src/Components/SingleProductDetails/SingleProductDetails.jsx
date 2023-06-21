@@ -12,6 +12,7 @@ import Alert from '@mui/material/Alert';
 
 import ReactStars from 'react-stars'
 import { render } from 'react-dom'
+import ReviewCard from "../ReviewCard/ReviewCard";
  
 const ratingChanged = (newRating) => {
   console.log(newRating)
@@ -42,6 +43,7 @@ const SingleProductDetails = () => {
     }
     setProductInfo(selectedPRoduct);
     setSelectedImage(selectedPRoduct?.image[0]);
+    console.log(selectedPRoduct);
   }, [productID]);
   const checkQuantity = () =>{
     const index = cart.findIndex((item)=>item.id === productID);
@@ -186,7 +188,19 @@ const SingleProductDetails = () => {
           </div>
         </div>
       </div>
-      <div className="product-details-bottom">Review</div>
+      <div className="product-details-bottom">Review
+        <div className="Review-Section">
+          {/* <ReviewCard image={"https://mui.com/static/images/avatar/1.jpg"} name={"Prashant"} review={"Good Product"}/>
+          <ReviewCard image={"https://mui.com/static/images/avatar/1.jpg"} name={"Prashant Srivastava"} review={"Unboxed this phone 2 hours ago and I was finding everything good until I opened the camera and tried different options there. The camera and video options are working fine but as soon as you click on portrait option, the camera gets stuck on a black screen and closes automatically with an error message."}/>
+          <ReviewCard image={"https://mui.com/static/images/avatar/1.jpg"} name={"Shashank"} review={"Good Product"}/>
+          <ReviewCard image={"https://mui.com/static/images/avatar/1.jpg"} name={"NSJ"} review={"Good Product"}/>
+          <ReviewCard image={"https://mui.com/static/images/avatar/1.jpg"} name={"Pushpendra"} review={"Good Product"}/> */}
+          {productInfo?.review.map((item)=>{
+            return <ReviewCard image={"https://mui.com/static/images/avatar/1.jpg"} name={"Prashant"} review={item}/>
+          })
+          }
+        </div>
+      </div>
     </div>
   );
 };
