@@ -1,0 +1,11 @@
+{
+  "appId": "com.pmart.app",
+  "appName": "PMart",
+  "bundledWebRuntime": false,
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">pmart</string>
+    <string name="title_activity_main">pmart</string>
+    <string name="package_name">com.pmart.app</string>
+    <string name="custom_url_scheme">com.pmart.app</string>
+</resources>
