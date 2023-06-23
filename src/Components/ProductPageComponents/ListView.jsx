@@ -11,7 +11,7 @@ const ListView = () => {
         <div className="list-view">
                 {filterArray.map((item)=>{
                     return (<>
-            <ListElement key={item.id} productObj={item} name={item.name} image={item.image} liked={true}/>
+            <ListElement key={item.id} productObj={item} name={item.name} image={item.image} liked={false}/>
         </>)
       })}
       </div>

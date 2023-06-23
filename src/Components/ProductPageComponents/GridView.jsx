@@ -9,7 +9,7 @@ const GridView = () => {
     <div className="grid-view-list">
         {filterArray.map((item)=>{
         return (<>
-            <ProductCard key={item.id} productObj={item} name={item.name} image={item.image} liked={true}/>
+            <ProductCard key={item.id} productObj={item} name={item.name} image={item.image} liked={false}/>
         </>)
       })}
     </div>
