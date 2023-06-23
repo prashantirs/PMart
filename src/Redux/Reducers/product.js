@@ -99,3 +99,21 @@ export const userReducer = (state = {}, {type,payload}) => {
             return state;
     }
 }
+export const gridReducer = (state = true, {type,payload}) => {
+    switch(type){
+        case ActionTypes.SET_GRID_VIEW:
+            return true;
+        case ActionTypes.SET_LIST_VIEW:
+            return false;    
+        default:
+            return state;
+    }
+}
+export const filterReducer = (state = [], {type,payload}) => {
+    switch(type){
+        case ActionTypes.FILTER_PRODUCTS:
+            return [...payload];
+        default:
+            return state;
+    }
+}

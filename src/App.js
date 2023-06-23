@@ -11,6 +11,7 @@ import Footer from "./Components/Footer/Footer";
 import SingleProductDetails from "./Components/SingleProductDetails/SingleProductDetails";
 import Favourite from "./Components/Favourite/Favourite";
 import UserProfile from "./Components/UserProfile/UserProfile";
+import Products from "./Components/Products/Products";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/favourite" element={<Favourite/>} />
           <Route path="/cart" element={<Cart/>} />
           <Route path="/me" element={<UserProfile/>} />
+          <Route path="/products" element={<Products/>} />
         </Routes>
         <Footer/>
         <Toaster position="bottom-left" toastOptions={{style:{zIndex:100000}}}/>

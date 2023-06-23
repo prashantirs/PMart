@@ -1,0 +1,12 @@
+.sort-section{
+    display: flex;
+    gap: 1.5rem;
+    cursor: pointer;
+}
+.gird-icon{
+    transition: all 0.3s ease-in-out;
+}
+.gird-icon:hover{
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+}

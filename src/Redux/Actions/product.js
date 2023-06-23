@@ -1,3 +1,4 @@
+import data from "../../API/products"
 import { ActionTypes } from "../Constants/action-type"
 
 export const addToCart = (data) => {
@@ -67,5 +68,22 @@ export const setUser = (user) => {
 export const setLogout = () => {
     return {
         type: ActionTypes.LOGOUT,
+    }
+}
+export const setGridView = () => {
+    return {
+        type: ActionTypes.SET_GRID_VIEW,
+    }
+}
+export const setListView = () => {
+    return {
+        type: ActionTypes.SET_LIST_VIEW,
+    }
+}
+
+export const setFilterProducts = (data) => {
+    return {
+        type: ActionTypes.FILTER_PRODUCTS,
+        payload:data
     }
 }

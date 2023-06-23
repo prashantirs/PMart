@@ -1,0 +1,39 @@
+.ListElement-container{
+    width: auto;
+    border: 1px solid rgb(232, 232, 232);
+
+    display: flex;
+    transition: transform 0.5s;
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+.list-image{
+    height: 15em;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transform: scale(1);
+}
+.list-inside-image{
+    padding-top: 5px;
+    width: 235px;
+    height: 238px;
+    object-fit: scale-down;
+    cursor: pointer;
+}
+.list-inside-image:hover{
+    transform: scale(1.1);
+    transition: transform 0.5s;
+}
+.list-description{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 50vw;
+    gap: 2rem;
+}
+.ProductDescription{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 2rem;
+}

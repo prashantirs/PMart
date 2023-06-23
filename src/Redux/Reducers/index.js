@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { CartReducer, FavouriteReducer, SelectedProductReducer, userReducer } from "./product";
+import { CartReducer, FavouriteReducer, SelectedProductReducer, filterReducer, gridReducer, userReducer } from "./product";
 
 
 const reducers = combineReducers({
@@ -7,6 +7,8 @@ const reducers = combineReducers({
     selectedProduct: SelectedProductReducer,
     favourite : FavouriteReducer,
     user: userReducer,
+    isGrid: gridReducer,
+    filterArray: filterReducer,
 });
 
 export default reducers;

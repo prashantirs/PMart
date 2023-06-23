@@ -100,7 +100,7 @@ input[type="text"]::placeholder{
 }
 .search-bar{
     z-index: 99999999999999999999999999999999 !important;
-    width: 40rem;
+    width: 20rem;
 }
 .login-button{
     color: white;
