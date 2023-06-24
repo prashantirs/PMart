@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setLocalData } from "../../helpers/utils";
 import { addToCart, addToFavorite, removeFromFavorite, setLiked } from "../../Redux/Actions/product";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ListElement = ({ image, name, productObj, liked }) => {
   const [isAddedToCart, setIsAddedToCart] = useState(false);
@@ -45,6 +45,10 @@ const ListElement = ({ image, name, productObj, liked }) => {
     navigate(`/product/${productObj.id}`);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[])
+
   return (
     <div className="ListElement-container">
       <div className="list-image">
@@ -56,24 +60,29 @@ const ListElement = ({ image, name, productObj, liked }) => {
         />
       </div>
       <div className="list-description">
-        <div className="ProductDescription" onClick={productCardHandler}>
-          {/* <h3 className="product-name">{`${EditedName}...`}</h3> */}
+        <div className="ProductDescription">
           <h3 className="product-name">{`${name}`}</h3>
           <p className="product-price">{productObj.price}</p>
-          <p>{productObj.discription}</p>
+          <p className="product-list-description">{productObj.discription}</p>
         </div>
-        <div className="product-cart-icon" onClick={addToCartHandler}>
-          <button className="add-to-cart" disabled={isAddedToCart}>
-            <ShoppingCartIcon fontSize="medium" style={{ color: "white" }} />
+        <div className="product-cart-icon list-product-bottom" >
+           <div className="list-product-left">
+            <div className="heart list-heart" onClick={handleLike}>
+                  {isLiked ? (
+                  <AiFillHeart style={{ color: "red" }} />
+                  ) : (
+                  <AiOutlineHeart style={{ color: "grey" }} />
+                  )}
+              </div>
+              <div className="view-product" onClick={productCardHandler}>
+                View Product
+              </div>
+           </div>
+          <button className="login-button add-cart-icon-text" disabled={isAddedToCart} onClick={addToCartHandler}>
+             Add To Cart <ShoppingCartIcon fontSize="small" style={{ color: "white" }} />
           </button>
           
-            <div className="heart" onClick={handleLike}>
-                {isLiked ? (
-                <AiFillHeart style={{ color: "red" }} />
-                ) : (
-                <AiOutlineHeart style={{ color: "grey" }} />
-                )}
-            </div>
+            
         </div>
       </div>
     </div>

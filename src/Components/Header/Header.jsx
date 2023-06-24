@@ -102,9 +102,9 @@ const Header = () => {
         </h1>
       </div>
       <div className="header-center">
-        <div className="menu">Brands</div>
+        <div className="menu" onClick={()=>{navigate("/bestsellers")}}>Brands</div>
         <div className="menu" onClick={()=>{navigate("/products")}}>Product</div>
-        <div className="menu">New Arrivals</div>
+        <div className="menu" onClick={()=>{navigate("/shopcasual")}}>New Arrivals</div>
       </div>
       <div className="header-right">
         <div className="header-right-icons">

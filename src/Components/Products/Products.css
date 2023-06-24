@@ -13,7 +13,22 @@
 }
 .product-view-sort {
   display: grid;
-  grid-template-rows: 0.1fr 1fr;
+  /* grid-template-rows: 0.1fr 1fr; */
+  grid-template-rows: 3rem 1fr;
+}
+.sort-filter{
+  position: sticky; 
+  top: 5.6rem;
+  z-index: 10;
+  background-color: white;
+  padding-bottom: 2rem;
+  height: 1rem;
+}
+.filter-left-section{
+  position: sticky; 
+  top: 5.7rem;
+  height: 100vh; 
+
 }
 
 @media (max-width: 1028px) {
