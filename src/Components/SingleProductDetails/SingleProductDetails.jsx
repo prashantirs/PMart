@@ -145,8 +145,19 @@ const SingleProductDetails = () => {
                             <button className='add-to-cart cartaddicon' onClick={addToCartHandler} disabled={addedToCart}>
                               Add to Cart
                             </button>
-                          </div>                                    
+                          </div>      
+  const showProductInfo = () =>{
+    toast.success(productInfo?.name);
+  }                                                      
   return (
+    <>
+    <div className="navigation-menu">
+      <div onClick={()=>{navigate('/')}}>PMart</div>
+      <div>{" > "}</div>
+      <div onClick={()=>{navigate('/products')}}>Product</div>
+      <div>{" > "}</div>
+      <div onClick={showProductInfo}>{`${productID}`}</div>
+    </div>
     <div className="product-details-container">
       <div className="product-details-top">
         <div className="product-details-top-left">
@@ -202,6 +213,7 @@ const SingleProductDetails = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

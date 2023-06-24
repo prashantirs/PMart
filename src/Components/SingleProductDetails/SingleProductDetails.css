@@ -9,6 +9,21 @@
   align-items: start;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+.navigation-menu{
+  display: flex;
+  position: relative;
+  top: 7rem;
+  margin-left: 3.6rem;
+  text-align: center;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  color: #959799;
+}
+.navigation-menu > div:hover{
+  cursor: pointer;
+  color: #4b4c4d;
+}
 .product-details-top {
   display: flex;
   gap: 2rem;
@@ -147,5 +162,8 @@
     width: 123%;
     position: relative;
     right: 2rem;
+  }
+  .navigation-menu{
+    display: none;
   }
 }

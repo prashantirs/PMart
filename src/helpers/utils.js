@@ -46,3 +46,8 @@ export const setLocalData = (key, value) => {
 export const removeLocalData = (key) => {
     localStorage.removeItem(key);
 }
+
+export const  openInNewTab = (url) => {
+  var win = window.open(url, '_blank');
+  win.focus();
+}
