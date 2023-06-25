@@ -124,13 +124,14 @@ input[type="text"]::placeholder{
     .company-name{
         font-size: 1rem;
         margin-top: 0.5rem;
+        top: 0.2rem;
     }
     .header-center{
-        /* display: none */
-        position: relative;
-        /* top: 1rem; */
+        display: none;
+        /* position: relative;
+         top: 1rem; 
         right: 0rem;
-        width: 12rem;
+        width: 12rem; */
     }
     .header-right-search{
         display: none;
@@ -166,5 +167,7 @@ input[type="text"]::placeholder{
         padding: 0.5rem 0.5rem;
         font-size: 0.5rem;
     }
-
+    .search-bar{
+        width: 10rem;
+    }
 }

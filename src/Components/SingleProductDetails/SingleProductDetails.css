@@ -164,6 +164,8 @@
     right: 2rem;
   }
   .navigation-menu{
-    display: none;
+    /* display: none; */
+    right: 2rem;
+    margin-top: -1rem;
   }
 }

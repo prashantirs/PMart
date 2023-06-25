@@ -32,7 +32,18 @@
 }
 
 @media (max-width: 1028px) {
+  .Products-Wrapper {
+    padding: 2rem
+  }
   .grid-filter-column {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 0.2rem;
+  }
+  .filter-left-section{
+    height: 28vh; 
+  
+  }
+  .sort-filter{
+    top: 4.9rem;
   }
 }

@@ -10,3 +10,9 @@
 /* .filter-section:hover{
     color: rgb(108, 108, 228)
 } */
+
+@media (max-width: 1028px) {
+    .FilterSection{
+        font-size: 12px;
+    }
+}

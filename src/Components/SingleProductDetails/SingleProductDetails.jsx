@@ -18,6 +18,7 @@ const ratingChanged = (newRating) => {
   console.log(newRating)
 }
 
+const prashantImage = "https://scontent.fbho4-2.fna.fbcdn.net/v/t39.30808-6/333095990_1677699749354768_8491086715967028261_n.jpg?stp=c0.216.1392.1392a_dst-jpg_s851x315&_nc_cat=107&ccb=1-7&_nc_sid=da31f3&_nc_ohc=UPbYrRQZ2GIAX-R4oYl&_nc_ht=scontent.fbho4-2.fna&oh=00_AfC2UQ8chrehjwi1hvaf3XLt7mzijDWOfgC-Y0K6hOZlZQ&oe=649C563C"
 const SingleProductDetails = () => {
   const [productInfo, setProductInfo] = useState();
   const [addedToCart, setAddedToCart] = useState(false);
@@ -207,7 +208,7 @@ const SingleProductDetails = () => {
           <ReviewCard image={"https://mui.com/static/images/avatar/1.jpg"} name={"NSJ"} review={"Good Product"}/>
           <ReviewCard image={"https://mui.com/static/images/avatar/1.jpg"} name={"Pushpendra"} review={"Good Product"}/> */}
           {productInfo?.review.map((item)=>{
-            return <ReviewCard image={"https://mui.com/static/images/avatar/1.jpg"} name={"Prashant"} review={item}/>
+            return <ReviewCard image={prashantImage} name={"Prashant"} review={item}/>
           })
           }
         </div>

@@ -70,9 +70,39 @@
 .view-product {
   font-family: "Noto Sans", sans-serif;
   font-weight: 300;
-  color: #ff3f6c;;
+  color: #ff3f6c;
 }
 .view-product:hover {
   color: #e60036;
   cursor: pointer;
+}
+@media (max-width: 1028px) {
+  .ListElement-container {
+    flex-direction: column;
+    width: 90%;
+    margin-top: 0;
+    padding: 0;
+    gap: 0;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+  }
+  .list-description {
+    width: 62vw;
+    gap: 2rem;
+  }
+  .product-list-description {
+    font-size: 12px;
+  }
+  .view-product {
+    font-size: 12px;
+  }
+  .add-cart-icon-text {
+    gap: 0rem;
+    font-size: 0;
+  }
+  .ProductDescription {
+    gap: 1rem;
+  }
 }
