@@ -115,6 +115,10 @@ input[type="text"]::placeholder{
     outline: none;
 
 }
+.header-right-icons-wrapper{
+    display: flex;
+    gap: 1rem;
+}
 @media (max-width:1028px) {
     .header{
         padding: 1rem 1rem;
@@ -136,10 +140,10 @@ input[type="text"]::placeholder{
     .header-right-search{
         display: none;
     }
-    .login-user{
+    /* .login-user{
         position: relative;
         left: -1.5rem;
-    }
+    } */
     .header-right-icons{
         gap: 15px;
     }
@@ -169,5 +173,9 @@ input[type="text"]::placeholder{
     }
     .search-bar{
         width: 10rem;
+    }
+    .header-right-icons-wrapper{
+        position: relative;
+        left: 1.2rem;
     }
 }

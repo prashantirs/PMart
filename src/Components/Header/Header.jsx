@@ -131,50 +131,52 @@ const Header = () => {
           }}
           className="search-bar"
         />
-          {isFavourite ? (
-            <StyledBadge
-              fontSize={window.innerWidth < 600 ? "small" : "large"}
-              badgeContent={favouriteItems}
-              color="info"
-            >
-              <FavoriteIcon
-                style={{ color: "#d02525" }}
-                onClick={() => {
-                  navigate("/favourite");
-                }}
+          <div className="header-right-icons-wrapper">
+            {isFavourite ? (
+              <StyledBadge
                 fontSize={window.innerWidth < 600 ? "small" : "large"}
-              />
-            </StyledBadge>
-          ) : (
-            <StyledBadge
-              fontSize={window.innerWidth < 600 ? "small" : "large"}
-              badgeContent={favouriteItems}
-              color="error"
-            >
-              <FavoriteBorderIcon
-                onClick={() => {
-                  navigate("/favourite");
-                }}
+                badgeContent={favouriteItems}
+                color="info"
+              >
+                <FavoriteIcon
+                  style={{ color: "#d02525" }}
+                  onClick={() => {
+                    navigate("/favourite");
+                  }}
+                  fontSize={window.innerWidth < 600 ? "small" : "large"}
+                />
+              </StyledBadge>
+            ) : (
+              <StyledBadge
                 fontSize={window.innerWidth < 600 ? "small" : "large"}
-              />
-            </StyledBadge>
-          )}
+                badgeContent={favouriteItems}
+                color="error"
+              >
+                <FavoriteBorderIcon
+                  onClick={() => {
+                    navigate("/favourite");
+                  }}
+                  fontSize={window.innerWidth < 600 ? "small" : "large"}
+                />
+              </StyledBadge>
+            )}
 
-          <div
-            className="cart"
-            onClick={() => {
-              navigate("/cart");
-            }}
-          >
-            <StyledBadge
-              fontSize={window.innerWidth < 600 ? "small" : "large"}
-              badgeContent={CartItems}
-              color="secondary"
+            <div
+              className="cart"
+              onClick={() => {
+                navigate("/cart");
+              }}
             >
-              <ShoppingCartOutlinedIcon
+              <StyledBadge
                 fontSize={window.innerWidth < 600 ? "small" : "large"}
-              />
-            </StyledBadge>
+                badgeContent={CartItems}
+                color="secondary"
+              >
+                <ShoppingCartOutlinedIcon
+                  fontSize={window.innerWidth < 600 ? "small" : "large"}
+                />
+              </StyledBadge>
+            </div>
           </div>
           {!userLoggedIn ? (
             <div className="login-user">
